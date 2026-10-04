@@ -1,0 +1,135 @@
+\documentclass[a4paper,12pt]{article}
+
+% ===============================
+% PACCHETTI DI BASE
+% ===============================
+
+% Margini e dimensioni della pagina
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% Lingua e codifica
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+% Interlinea
+\usepackage{setspace}
+\setstretch{1.5}
+
+% Matematica
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+
+% Tabelle e figure
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+
+% Colori e grafica
+\usepackage{xcolor}
+\usepackage{tikz}
+
+% Gestione dei collegamenti ipertestuali
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=blue,
+    pdftitle={Titolo del Documento},
+    pdfpagemode=FullScreen,
+}
+
+% Bibliografia
+\usepackage{cite}
+
+% Miglioramenti tipografici
+\usepackage{csquotes}
+\usepackage{microtype}
+
+% Liste
+\usepackage{enumitem}
+
+% Generazione testo di esempio
+\usepackage{lipsum}
+% Inclusione di file PDF
+\usepackage{pdfpages}
+
+% ===============================
+% LAYOUT E STILI PERSONALIZZATI
+% ===============================
+
+% Header e footer
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+% titolo capitolo/section al centro
+\fancyfoot[C]{\thepage}
+\setlength{\headsep}{10pt}
+
+% Spaziatura titoli
+\usepackage{titlesec}
+\titlespacing{\section}{0pt}{-3pt}{-3pt}
+\titlespacing{\subsection}{0pt}{-3pt}{-3pt}
+\titlespacing{\subsubsection}{0pt}{-3pt}{-3pt}
+
+% Indice compatto con puntini
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\itshape}
+
+% Riduce spaziature tra formule
+\AtBeginDocument{%
+  \setlength{\abovedisplayskip}{3pt}%
+  \setlength{\belowdisplayskip}{3pt}%
+  \setlength{\abovedisplayshortskip}{4pt}%
+  \setlength{\belowdisplayshortskip}{4pt}%
+}
+\setlist[itemize]{topsep=3pt, partopsep=0pt, parsep=0pt, itemsep=3pt}
+\setlist[enumerate]{topsep=3pt, partopsep=0pt, parsep=0pt, itemsep=3pt}
+
+% ===============================
+% FRONTESPIZIO
+% ===============================
+%se si vuole usare il frontespizio base fornito da latex usare queste tre righe e lasciare \maketitle in documento
+\title{Dispensa IIoT}
+\author{Nicolò Sciara}
+\date{A.A. 2025/2026}
+% Se si vuole un frontespizio preso da file pdf commentare le tre righe sopra ed anche la righa \maketitle in documento
+
+% ===============================
+% DOCUMENTO
+% ===============================
+
+\begin{document}
+\maketitle
+% Se si vuole un frontespizio preso da file pdf decommentare la riga sotto e commentare \maketitle
+%\includepdf{./<percorso>/<nome_file>.pdf}
+\thispagestyle{empty}
+
+% ===============================
+% INDICE
+% ===============================
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+
+% ===============================
+% NUMERAZIONE PRINCIPALE
+% ===============================
+\pagenumbering{arabic}
+\newpage
+
+\input{./Capitoli/1-Introduzione.tex}
+
+\end{document}
